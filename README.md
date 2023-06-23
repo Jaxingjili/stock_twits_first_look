@@ -14,6 +14,8 @@ This is the main analysis notebook. In this notebook, we roughly divide the whol
 
 #### Logic of forecast accuracy
 For a message post, we find the ticker code (stock) it mentions, the sentiment of the user (bullish or bearish), and also the date of the post. Based on the date and ticker code, we grab the true stock price data from yfinance package. With the true price data, we compare the the price for the post date with the price a few days later (+ 1, 3, 7, 11, 14, 28 days). If the price goes align with the sentiment (if the price goes up while the sentiment is bullish and vise versa), we set the "outcome" of the post as +1, if it goes against the sentiment, we set it to -1, if it stays the same, we set 0. For the "forecast accuracy", we group by user and take the average of the "outcomes".
+### ustils
+This py file contains a few functions that would be used in the analysis for easy calling as there are a lot of notebooks doing similar tasks along the progress of the project while I just uploaded the most conprehensive one here. 
 
 ### FA_analysis
 This notebook is the analysis of the FA files. It produced the FA distribution of the FAs of each quarters. And also analyse the FA cross quarters to find the users who are continuously doing good / bad.
